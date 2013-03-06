@@ -24,7 +24,7 @@ app.get('/', function(request, response) {
 
     query.on('end', function() { 
       client.end();
-      response.send('DB: [' + process.env.DATABASE_URL + '] ROWS: [' + html + ']');
+      response.send('ROWS: [' + html + ']');
     });
 
     //response.send('ROWS: [' + html + ']');
