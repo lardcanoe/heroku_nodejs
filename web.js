@@ -8,17 +8,17 @@ app.get('/', function(request, response) {
   var client = new pg.Client(process.env.DATABASE_URL);
   client.connect();
 
-  console.log(process.env.DATABASE_URL);
+//  console.log(process.env.DATABASE_URL);
 
-  response.send("DB: [" + process.env.DATABASE_URL + "]");
+//  response.send("DB: [" + process.env.DATABASE_URL + "]");
 
-/*
+
 //  pg.connect(process.env.DATABASE_URL, function(err, client) {
     var query = client.query('SELECT * FROM users');
     var html = '';
 
     query.on('row', function(row) {
-      console.log(row.username);
+      //console.log(row.username);
       html += row.username + ',';
     });
 
@@ -29,7 +29,7 @@ app.get('/', function(request, response) {
 
     //response.send('ROWS: [' + html + ']');
 //  });
-*/
+
 
 });
 
