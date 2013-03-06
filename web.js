@@ -5,12 +5,14 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
 
-//  response.send("DB: [" + process.env.DATABASE_URL + "]");
-var client = new pg.Client(process.env.DATABASE_URL);
-client.connect();
+  var client = new pg.Client(process.env.DATABASE_URL);
+  client.connect();
 
-console.log(process.env.DATABASE_URL);
+  console.log(process.env.DATABASE_URL);
 
+  response.send("DB: [" + process.env.DATABASE_URL + "]");
+
+/*
 //  pg.connect(process.env.DATABASE_URL, function(err, client) {
     var query = client.query('SELECT * FROM users');
     var html = '';
@@ -22,11 +24,12 @@ console.log(process.env.DATABASE_URL);
 
     query.on('end', function() { 
       client.end();
-      response.send('ROWS: [' + html + ']');
+      response.send('DB: [' + process.env.DATABASE_URL + '] ROWS: [' + html + ']');
     });
 
     //response.send('ROWS: [' + html + ']');
 //  });
+*/
 
 });
 
